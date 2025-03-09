@@ -1,4 +1,5 @@
---extra-index-url https://download.pytorch.org/whl/cu124
+--extra-index-url https://download.pytorch.org/whl/cu126
+# --extra-index-url https://pypi.ngc.nvidia.com
 torch
 torchvision
 torchaudio
