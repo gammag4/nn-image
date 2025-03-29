@@ -2,6 +2,7 @@
 FROM nvcr.io/nvidia/pytorch:24.12-py3
 COPY . /code/
 RUN chmod -R +x /code/
+RUN /code/git_configs.sh
 RUN /code/install_ffmpeg.sh
 RUN pip install -r /code/requirements.txt
 ENTRYPOINT bash
