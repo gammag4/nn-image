@@ -1,7 +1,7 @@
 # Add to WSL, powershell and Git Bash
 git config --global user.name "Gabriel Maia Gondim"
 git config --global user.email "41156120+gammag4@users.noreply.github.com"
-git config --global core.editor "zed"
+git config --global core.editor "vim"
 git config --global alias.s "status -s"
 git config --global alias.l "log --graph --oneline -6"
 git config --global alias.la "log --graph --oneline"
