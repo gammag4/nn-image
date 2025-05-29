@@ -1,7 +1,12 @@
-# Add to WSL, powershell and Git Bash
+#!/bin/bash
+
+printf "\nConfiguring git aliases\n"
+set -ev
+
 git config --global user.name "Gabriel Maia Gondim"
 git config --global user.email "41156120+gammag4@users.noreply.github.com"
 git config --global core.editor "vim"
+git config --global pager.diff 'less +/diff\ --git'
 git config --global alias.s "status -s"
 git config --global alias.l "log --graph --oneline -6"
 git config --global alias.la "log --graph --oneline"
@@ -11,3 +16,5 @@ git config --global alias.ca "commit --amend --no-edit"
 git config --global alias.ce "checkout"
 git config --global alias.b "branch"
 git config --global alias.m "merge"
+git config --global alias.df "diff"
+git config --global alias.dfc "diff --cached"
