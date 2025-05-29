@@ -1,6 +1,8 @@
 # You should have NVIDIA drivers and CUDA Toolkit installed before building, see README.md for details.
 
-# Check https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags 24.12 is the latest stable
+# Check tags in https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags
+# Check release notes in https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html
+# 24.12 is the latest with cuda 12.6 and python 3.12, based in ubuntu 24.04
 FROM nvcr.io/nvidia/pytorch:24.12-py3
 COPY . /code/
 RUN chmod -R +x /code/
