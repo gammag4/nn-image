@@ -6,6 +6,7 @@ COPY . /code/
 RUN chmod -R +x /code/
 RUN /code/git_configs.sh
 RUN /code/install_ffmpeg.sh
+RUN /code/install_open3d.sh
 RUN pip install -r /code/requirements.txt
 RUN rm -r /code/
 ENTRYPOINT bash
