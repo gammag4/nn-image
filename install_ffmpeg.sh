@@ -1,4 +1,8 @@
 #!/bin/bash
+
+printf "\nBuilding and installing ffmpeg\n"
+set -ev
+
 cd /
 
 git clone https://github.com/FFmpeg/nv-codec-headers.git --branch n13.0.19.0
