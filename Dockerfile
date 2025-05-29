@@ -4,6 +4,7 @@
 # Check release notes in https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html
 # 24.12 is the latest with cuda 12.6 and python 3.12, based in ubuntu 24.04
 FROM nvcr.io/nvidia/pytorch:24.12-py3
+RUN apt-get update
 COPY . /code/
 RUN chmod -R +x /code/
 RUN /code/git_configs.sh

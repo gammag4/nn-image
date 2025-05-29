@@ -11,7 +11,6 @@ cd /
 rm -r nv-codec-headers
 
 # TODO add versions for better reproducibility
-apt-get update
 apt-get -y install build-essential yasm cmake libtool libc6 libc6-dev unzip wget libnuma1 libnuma-dev
 
 git clone https://github.com/FFmpeg/FFmpeg.git --branch n7.1.1 ffmpeg/
