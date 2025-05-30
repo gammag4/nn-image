@@ -1,0 +1,34 @@
+FROM torch-temp2 # this one is from Dockerfile2
+COPY . /code/
+RUN chmod -R +x /code/
+
+RUN apt-get -y install libegl1 libgl1 libgomp1
+
+RUN cd /Open3D/ && git submodule update --init --recursive
+
+#RUN cd /Open3D/ && sed -i -e "/^#ifndef THRUST_IGNORE_CUB_VERSION_CHECK$/i #define THRUST_IGNORE_CUB_VERSION_CHECK" /usr/local/cuda/targets/x86_64-linux/include/thrust/system/cuda/config.h
+
+# If you're updating the container, check if GLIBCXX_USE_CXX11_ABI should be ON or OFF running `python -c "import torch; print(torch._C._GLIBCXX_USE_CXX11_ABI)"`
+RUN cd /Open3D/build/ && cmake -DDEVELOPER_BUILD=ON \
+      -DBUILD_JUPYTER_EXTENSION=ON \
+      -DBUILD_CUDA_MODULE=ON \
+      -DGLIBCXX_USE_CXX11_ABI=ON \
+      -DBUILD_PYTORCH_OPS=ON \
+      -DBUNDLE_OPEN3D_ML=ON \
+      -DOPEN3D_ML_ROOT=/Open3D-ML/ \
+      ..
+
+RUN cd /Open3D/build/ && make -j$(nproc)
+RUN cd /Open3D/build/ && make install -j$(nproc)
+RUN cd /Open3D/build/ && make install-pip-package -j$(nproc)
+
+RUN cd /
+RUN cd / && rm -r Open3D
+RUN cd / && rm -r Open3D-ML
+
+
+
+
+#RUN /code/install_open3d.sh
+RUN rm -r /code/
+ENTRYPOINT bash

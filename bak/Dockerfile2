@@ -1,0 +1,21 @@
+FROM torch-temp # this one is the same as dockerfile but stops right before install_open3d.sh
+COPY . /code/
+RUN chmod -R +x /code/
+
+RUN cd / && git clone https://github.com/isl-org/Open3D --branch v0.19.0
+RUN cd / && git clone https://github.com/isl-org/Open3D-ML --branch v0.19.0
+
+RUN apt-get install -y npm
+RUN npm install -g yarn
+
+RUN SUDO=" " /Open3D/util/install_deps_ubuntu.sh assume-yes
+#RUN pip install -r /Open3D/python/requirements_jupyter_build.txt
+
+RUN mkdir /Open3D/build/
+
+
+
+
+#RUN /code/install_open3d.sh
+RUN rm -r /code/
+ENTRYPOINT bash

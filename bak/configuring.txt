@@ -1,0 +1,38 @@
+i was trying to build open3d and open3d-ml from source here
+in order to be able to build this, you will probably have to install cuda toolkit in the docker image
+but im done with this for now
+for now only use draw_plotly in open3d
+
+although a specific version of cuda-toolkit seems to be installed
+but it does not have the static files for cusolver, only dynamic ones
+so maybe try to find how to compile it dynamically?
+
+
+
+
+cuda_wheel_py312_dev
+
+
+
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda-repo-ubuntu2404-12-6-local_12.6.3-560.35.05-1_amd64.deb
+dpkg -i cuda-repo-ubuntu2404-12-6-local_12.6.3-560.35.05-1_amd64.deb
+cp /var/cuda-repo-ubuntu2404-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
+apt-get update
+apt-get -y install cuda-toolkit-12-6
+
+
+
+
+
+
+
+export XDG_RUNTIME_DIR=/run/user/"${UID}"
+
+
+
+
+
+export DISPLAY=:1.0 && docker run -it -e XDG_RUNTIME_DIR=/tmp -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY --user=0:0 -e NVIDIA_DRIVER_CAPABILITIES=all -v ~/Desktop/Projects/:/Projects/ --gpus all -d --name torch torch
