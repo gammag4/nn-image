@@ -2,5 +2,4 @@
 
 Just an image I use to develop Python projects in VSCode.
 
-You should have [NVIDIA drivers](https://github.com/roworu/nvidia-fedora-secureboot) and [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) installed before building.
-Guide for installingh CUDA Toolkit [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux).
+You should have [Docker](https://docs.docker.com/engine/install/), [NVIDIA Drivers](https://github.com/roworu/nvidia-fedora-secureboot) and [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed before building.

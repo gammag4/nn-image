@@ -1,4 +1,4 @@
-# You should have NVIDIA drivers and CUDA Toolkit installed before building, see README.md for details.
+# You should have NVIDIA Drivers and NVIDIA Container Toolkit installed before building, see README.md for details.
 
 # Check tags in https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags
 # Check release notes in https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html
