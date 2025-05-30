@@ -3,7 +3,6 @@
 printf "\nBuilding and installing open3d\n"
 set -ev
 
-cd /
 git clone https://github.com/isl-org/Open3D --branch v0.19.0
 cd Open3D
 
@@ -17,5 +16,5 @@ make -j$(nproc)
 make install
 make install-pip-package
 
-cd /
+cd ../../
 rm -r Open3D

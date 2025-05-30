@@ -7,12 +7,15 @@ FROM nvcr.io/nvidia/pytorch:24.12-py3
 RUN apt-get update
 RUN apt-get -y install ccache
 COPY . /code/
-RUN chmod -R +x /code/
-RUN /code/git_configs.sh
-RUN /code/install_ffmpeg.sh
-RUN /code/install_open3d.sh
-RUN pip install -r /code/requirements.txt
+WORKDIR /code/
+RUN chmod -R +x ./
+RUN ./git_configs.sh
+RUN ./install_ffmpeg.sh
+RUN ./install_open3d.sh
+RUN pip install -r requirements.txt
+WORKDIR /
 RUN rm -r /code/
+RUN rm -r /workspace/
 ENTRYPOINT bash
 # CMD jupyter notebook --ip 0.0.0.0
 
