@@ -11,13 +11,17 @@ RUN apt-get -y install ccache
 COPY . /code/
 WORKDIR /code/
 RUN chmod -R +x ./
+
 RUN ./git_configs.sh
 RUN ./install_ffmpeg.sh
 RUN pip install -r requirements.txt
 RUN ./install_open3d.sh
-WORKDIR /
+
+WORKDIR /home/ubuntu
 RUN rm -r /code/
 RUN rm -r /workspace/
+
+USER ubuntu
 ENTRYPOINT bash
 # CMD jupyter notebook --ip 0.0.0.0
 
@@ -25,8 +29,9 @@ ENTRYPOINT bash
 # docker login nvcr.io
 # docker build -t torch -f Dockerfile .
 # docker build -t torch -f Dockerfile --progress=plain . &> build.log
-# docker run -it -v ~/Projects/:/Projects/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
+# docker run -it -v ~/Projects/:/home/ubuntu/Projects/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
 
 # docker run -it --gpus all -d --name torch nvcr.io/nvidia/pytorch:24.12-py3
 # docker start torch
 # docker exec -it torch bash
+# If you need to use root: docker exec -u root -it torch bash
