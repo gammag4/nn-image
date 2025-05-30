@@ -25,13 +25,9 @@ USER ubuntu
 ENTRYPOINT bash
 # CMD jupyter notebook --ip 0.0.0.0
 
-# use "$oauthtoken" as user and api key from https://org.ngc.nvidia.com/setup/api-keys as password
-# docker login nvcr.io
-# docker build -t torch -f Dockerfile .
+# docker build -t torch .
 # docker build -t torch -f Dockerfile --progress=plain . &> build.log
-# docker run -it -v ~/Projects/:/home/ubuntu/Projects/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
-
-# docker run -it --gpus all -d --name torch nvcr.io/nvidia/pytorch:24.12-py3
+# docker run -it -v ~/Desktop/Projects/:/home/ubuntu/Projects/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
 # docker start torch
 # docker exec -it torch bash
-# If you need to use root: docker exec -u root -it torch bash
+# docker exec -u root -it torch bash
