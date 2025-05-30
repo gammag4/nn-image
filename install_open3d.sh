@@ -1,20 +1,13 @@
 #!/bin/bash
 
-printf "\nBuilding and installing open3d\n"
+printf "\nInstalling open3d\n"
 set -ev
 
-git clone https://github.com/isl-org/Open3D --branch v0.19.0
-cd Open3D
+apt-get install -y npm
+npm install -g yarn
 
-SUDO=" " util/install_deps_ubuntu.sh assume-yes
+apt-get install -y libegl1 libgl1 libgomp1
+SUDO=" " ./open3d_install_deps_ubuntu.sh assume-yes
+pip install ipywidgets jupyter_packaging configargparse dash flask
 
-mkdir build
-cd build
-cmake ..
-
-make -j$(nproc)
-make install
-make install-pip-package
-
-cd ../../
-rm -r Open3D
+pip install open3d==0.19
