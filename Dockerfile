@@ -27,7 +27,7 @@ ENTRYPOINT bash
 
 # docker build -t torch .
 # docker build -t torch -f Dockerfile --progress=plain . &> build.log
-# docker run -it -v ~/Desktop/Projects/:/home/ubuntu/Projects/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
+# docker run -it -v ~/Desktop/Projects/:/home/ubuntu/Projects/ -v ~/.ssh/:/home/ubuntu/.ssh/ -e NVIDIA_DRIVER_CAPABILITIES=all --gpus 'all' -d --name torch torch
 # docker start torch
 # docker exec -it torch bash
 # docker exec -u root -it torch bash
