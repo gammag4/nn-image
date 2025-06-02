@@ -7,6 +7,7 @@
 FROM nvcr.io/nvidia/pytorch:24.12-py3
 RUN apt-get update
 RUN apt-get -y install ccache
+RUN apt-get -y install neovim
 #TODO Add versions when installing packages in scripts for better reproducibility
 COPY . /code
 WORKDIR /code
