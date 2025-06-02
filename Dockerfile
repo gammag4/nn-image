@@ -5,15 +5,13 @@
 # 24.12 is the latest with cuda 12.6 and python 3.12, based in ubuntu 24.04
 # If updating to another container, check `install_open3d.sh` to update it if needed
 FROM nvcr.io/nvidia/pytorch:24.12-py3
-RUN apt-get update
-RUN apt-get -y install ccache
-RUN apt-get -y install neovim
 #TODO Add versions when installing packages in scripts for better reproducibility
 COPY . /code
 WORKDIR /code
 RUN rm -r /workspace
 RUN chmod -R +x .
 
+RUN ./install_packages.sh
 RUN ./install_ffmpeg.sh
 RUN pip install -r requirements.txt
 RUN ./install_open3d.sh
