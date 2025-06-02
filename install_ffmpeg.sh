@@ -3,6 +3,10 @@
 printf "\nBuilding and installing ffmpeg\n"
 set -ev
 
+# Sources:
+# https://trac.ffmpeg.org/wiki/CompilationGuide
+# https://docs.nvidia.com/video-technologies/video-codec-sdk/12.1/ffmpeg-with-nvidia-gpu/index.html
+
 mkdir /ffmpeg_sources/
 
 # TODO add versions for better reproducibility
