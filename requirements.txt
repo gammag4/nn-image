@@ -18,4 +18,5 @@ opencv
 #chromadb
 accelerate
 transformers
+datasets[audio,vision]
 -r requirements-torch.txt
