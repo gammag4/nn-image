@@ -1,6 +1,7 @@
 ipykernel
 pylint
 autopep8
+python-dotenv
 progressbar2
 numpy
 scipy
