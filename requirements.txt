@@ -16,5 +16,6 @@ ultralytics
 imageio
 opencv
 #chromadb
+accelerate
 transformers
 -r requirements-torch.txt
