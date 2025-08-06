@@ -16,6 +16,8 @@ ultralytics
 imageio
 opencv
 #chromadb
+omegaconf
+easydict
 accelerate
 transformers
 datasets[audio,vision]
