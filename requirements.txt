@@ -17,6 +17,7 @@ imageio
 opencv
 #chromadb
 omegaconf
+dependency-injector
 easydict
 accelerate
 transformers
