@@ -12,4 +12,3 @@ xformers
 lightning
 torch_xla[tpu]
 pytorch-triton
-#https://github.com/woct0rdho/triton-windows/releases/download/v3.1.0-windows.post5/triton-3.1.0-cp312-cp312-win_amd64.whl
