@@ -3,6 +3,7 @@
 # Check tags in https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags
 # Check release notes in https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html
 # 24.12 is the latest with cuda 12.6 and python 3.12, based in ubuntu 24.04
+# Versions: cuda 12.6, python 3.12, pytorch 2.7.0+cu126
 # If updating to another container, check `install_open3d.sh` to update it if needed
 FROM nvcr.io/nvidia/pytorch:24.12-py3
 #TODO Add versions when installing packages in scripts for better reproducibility
