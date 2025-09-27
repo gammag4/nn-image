@@ -20,8 +20,6 @@ RUN ./install_open3d.sh
 RUN chown -R ubuntu:ubuntu /code
 USER ubuntu
 
-RUN git clone https://gist.github.com/d7cf3d3aa5630dded64a4dab6ad6aa81.git ./git_configs && ./git_configs/git_configs.sh
-
 WORKDIR /home/ubuntu
 RUN rm -r /code
 ENTRYPOINT bash
