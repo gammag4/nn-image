@@ -14,7 +14,8 @@ einops
 trimesh
 ultralytics
 imageio
-opencv
+plotly
+opencv-python
 #chromadb
 omegaconf
 dependency-injector
