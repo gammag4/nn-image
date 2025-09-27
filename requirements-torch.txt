@@ -12,3 +12,4 @@ xformers
 lightning
 torch_xla[tpu]
 pytorch-triton
+kaolin==0.18.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.7.0_cu126.html
